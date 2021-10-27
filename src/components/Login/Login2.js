@@ -1,16 +1,25 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
+
 const Login2 = () => {
+  const history = useHistory();
   const [user, setUser] = useState({
     username: "",
     password: "",
   });
 
   const handleChangeUser = (e) => {
+    console.log(e.target.name, e.target.value);
     setUser((user) => ({
       ...user,
       [e.target.name]: e.target.value,
     }));
     console.log(e.target.value);
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    history.push("/");
   };
   return (
     <div>
@@ -28,7 +37,7 @@ const Login2 = () => {
         value={user.password}
         onChange={handleChangeUser}
       />
-      <button onClick={() => console.log(user)}>Klik</button>
+      <button onClick={handleLogin}>Klik</button>
     </div>
   );
 };

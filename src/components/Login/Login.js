@@ -7,10 +7,12 @@ const Login = () => {
   const handleChangeUsername = (e) => {
     // console.log(e);
     setName(e.target.value);
+    console.log(e.target.value);
   };
   const handleChangePassword = (e) => {
     // console.log(e);
     setPassword(e.target.value);
+    console.log(e.target.value);
   };
   return (
     <div>
